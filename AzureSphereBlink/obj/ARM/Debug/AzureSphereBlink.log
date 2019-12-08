@@ -1,0 +1,231 @@
+﻿  In function 'post':
+main.c(57,18): warning : conversion to 'int' from 'size_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+main.c(57,18): warning :   pooh.sizeleft = strlen(data);
+main.c(57,18): warning :                   ^~~~~~
+main.c(52,11): warning : variable 'res' set but not used [-Wunused-but-set-variable]
+main.c(52,11): warning :   CURLcode res;
+main.c(52,11): warning :            ^~~
+  At top level:
+main.c(151,1): warning : no semicolon at end of struct or union
+main.c(151,1): warning :  };
+main.c(151,1): warning :  ^
+main.c(158,1): warning : no semicolon at end of struct or union
+main.c(158,1): warning :  };
+main.c(158,1): warning :  ^
+  In function 'main':
+main.c(238,33): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(238,33): warning :    GPIO_GetValue(fd_flamesensor, &(newValues.flameSensor));
+main.c(238,33): warning :                                  ^~~~~~~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(239,36): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(239,36): warning :    GPIO_GetValue(fd_pressureSensor, &(newValues.indusorPressure));
+main.c(239,36): warning :                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(240,36): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(240,36): warning :    GPIO_GetValue(fd_blowerTempHigh, &(newValues.blowerHighHeat));
+main.c(240,36): warning :                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(241,34): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(241,34): warning :    GPIO_GetValue(fd_rolloutFront, &(newValues.flameRolloutGrill));
+main.c(241,34): warning :                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(242,34): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(242,34): warning :    GPIO_GetValue(fd_rolloutFront, &(newValues.flameRolloutFront));
+main.c(242,34): warning :                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(243,25): warning : passing argument 2 of 'GPIO_GetValue' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(243,25): warning :    GPIO_GetValue(fd_btn, &(newValues.button));
+main.c(243,25): warning :                          ^~~~~~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/applibs/gpio.h:134:48: note: expected 'GPIO_Value_Type *' {aka 'unsigned char *'} but argument is of type 'GPIO_Value *' {aka 'enum <anonymous> *'}
+   int GPIO_GetValue(int gpioFd, GPIO_Value_Type *outValue);
+                                 ~~~~~~~~~~~~~~~~~^~~~~~~~
+main.c(339,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(339,11): warning :    sprintf(&tempOutput, "Temp = %.2f deg F", temp);
+main.c(339,11): warning :            ^~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[20]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(340,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(340,11): warning :    sprintf(&humidityOutput, "Humidity = %.2f", humidity);
+main.c(340,11): warning :            ^~~~~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[20]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(341,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  "no");
+             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[20]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(343,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  "OFF");
+             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(347,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(347,12): warning :     sprintf(&statusLine1, "Building pressure...");
+main.c(347,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(348,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  %d", (int)(MAX_INDUCER_TIME - difftime(time(NULL), timestamps.inducerTurnedOn)));
+              ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(352,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(352,12): warning :     sprintf(&statusLine1, "Warming Up");
+main.c(352,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(353,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  %d", (int)(MAX_IGNITOR_TIME/2 - difftime(time(NULL), timestamps.ignitorTurnedOn)));
+              ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(357,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(357,12): warning :     sprintf(&statusLine1, "Starting fire!!!");
+main.c(357,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(358,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  %d", (int)(MAX_IGNITOR_TIME - difftime(time(NULL), timestamps.ignitorTurnedOn)));
+              ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(362,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(362,12): warning :     sprintf(&statusLine1, "Born 2 Burn");
+main.c(362,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(363,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(363,12): warning :     sprintf(&statusLine1, "");
+main.c(363,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(366,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(366,12): warning :     sprintf(&statusLine1, "");
+main.c(366,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(367,12): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(367,12): warning :     sprintf(&statusLine2, "");
+main.c(367,12): warning :             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2+Beta1905/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[22]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(391,28): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(391,28): warning :    sd1306_draw_string(0, 0, &tempOutput, 1, 1);
+main.c(391,28): warning :                             ^~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[20]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(392,28): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(392,28): warning :    sd1306_draw_string(0, 8, &humidityOutput, 1, 1);
+main.c(392,28): warning :                             ^~~~~~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[20]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(393,29): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(393,29): warning :    sd1306_draw_string(0, 16, &flameOutput, 1, 1);
+main.c(393,29): warning :                              ^~~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[20]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(395,29): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(395,29): warning :    sd1306_draw_string(0, 24, &statusLine1, 1, 1);
+main.c(395,29): warning :                              ^~~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[22]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(396,29): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(396,29): warning :    sd1306_draw_string(0, 32, &statusLine2, 1, 1);
+main.c(396,29): warning :                              ^~~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[22]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(397,29): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(397,29): warning :    sd1306_draw_string(0, 40, &statusLine3, 1, 1);
+main.c(397,29): warning :                              ^~~~~~~~~~~~
+  
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[22]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(182,6): warning : unused variable 'fd_rolloutGrill' [-Wunused-variable]
+main.c(182,6): warning :   int fd_rolloutGrill = GPIO_OpenAsInput(32);
+main.c(182,6): warning :       ^~~~~~~~~~~~~~~
+main.c(179,9): warning : unused variable 'fd' [-Wunused-variable]
+main.c(179,9): warning :      int fd = GPIO_OpenAsOutput(9, GPIO_OutputMode_PushPull, GPIO_Value_High);
+main.c(179,9): warning :          ^~
+  Azure Sphere Utility version 19.5.4.53731
+  Copyright (C) Microsoft Corporation. All rights reserved.
+   
+  Start time (UTC): Saturday, 14 September 2019 23:11:55 
+  verbose: Creating image package. 
+  verbose: Azure Sphere application image package written. 
+  verbose: Appending metadata. 
+  verbose: Wrote metadata:
+    Section: Identity
+      Image Type:           Application
+      Component ID:         f9adb46e-fbbe-4a1b-90c6-8f46f198f862
+      Image ID:             acc60b0a-5bf3-49bc-ac7b-45fe40f994fc
+    Section: Signature
+      Signing Type:         ECDsa256
+      Cert:                 a8d5cc6958f48710140d7a26160fc1cfc31f5df0
+    Section: Debug
+      Image Name:           AzureSphereBlink
+      Built On (UTC):       9/14/2019 11:11:56 PM
+      Built On (Local):     9/14/2019 7:11:56 PM
+    Section: Temporary Image
+      Remove image at boot: False
+      Under development:    True
+    Section: ABI Depends
+      Depends on:           ApplicationRuntime, version 2
+   
+  verbose: Packaging completed successfully. 
+  verbose: Output file is at: D:\Lab\Dev\AzureSphere\Blinky\AzureSphereBlink\AzureSphereBlink\bin\ARM\Debug\AzureSphereBlink.imagepackage 
+  Command completed successfully in 00:00:00.5873421. 

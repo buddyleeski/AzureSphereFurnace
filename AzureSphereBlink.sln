@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AzureSphereBlink", "AzureSphereBlink\AzureSphereBlink.vcxproj", "{3E6D2E82-5D5D-4DEB-A9F8-57D00C61558A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E6D2E82-5D5D-4DEB-A9F8-57D00C61558A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3E6D2E82-5D5D-4DEB-A9F8-57D00C61558A}.Debug|ARM.Build.0 = Debug|ARM
+		{3E6D2E82-5D5D-4DEB-A9F8-57D00C61558A}.Release|ARM.ActiveCfg = Release|ARM
+		{3E6D2E82-5D5D-4DEB-A9F8-57D00C61558A}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4DDF0F8-9F0B-403B-B0D8-F0BDBD1BA060}
+	EndGlobalSection
+EndGlobal

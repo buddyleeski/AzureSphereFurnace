@@ -1,0 +1,449 @@
+﻿  In function 'sd1306_send_command':
+  In function 'main':
+main.c(42,10): error : implicit declaration of function 'I2CMaster_Open' [-Werror=implicit-function-declaration]
+main.c(42,10): error :   i2cFd = I2CMaster_Open(I2C_ID);
+main.c(42,10): error :           ^~~~~~~~~~~~~~
+main.c(55,2): error : implicit declaration of function 'I2CMaster_SetBusSpeed' [-Werror=implicit-function-declaration]
+main.c(55,2): error :   I2CMaster_SetBusSpeed(i2cFd, 100000);
+main.c(55,2): error :   ^~~~~~~~~~~~~~~~~~~~~
+main.c(76,11): error : implicit declaration of function 'I2CMaster_Write' [-Werror=implicit-function-declaration]
+main.c(76,11): error :    int r = I2CMaster_Write(i2cFd, 37, "HI", 2);
+main.c(76,11): error :            ^~~~~~~~~~~~~~~
+sd1306.c(48,11): error : implicit declaration of function 'I2CMaster_Write' [-Werror=implicit-function-declaration]
+sd1306.c(48,11): error :   retval = I2CMaster_Write(i2cFd, addr, data_to_send, 2);
+sd1306.c(48,11): error :            ^~~~~~~~~~~~~~~
+main.c(79,19): error : implicit declaration of function 'I2CMaster_Read' [-Werror=implicit-function-declaration]
+main.c(79,19): error :    int bytesread = I2CMaster_Read(i2cFd, 37, &status, sizeof(status));
+main.c(79,19): error :                    ^~~~~~~~~~~~~~
+  In function 'sd1306_draw_pixel':
+main.c(90,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(90,11): warning :    sprintf(&tempOutput,     "Temp = %.2f deg C", temp);
+main.c(90,11): warning :            ^~~~~~~~~~~
+  
+sd1306.c(179,39): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(179,39): warning :      oled_buffer[x + (y / 8) * 128] &= ~(1 << (y & 7));
+sd1306.c(179,39): warning :                                        ^
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[20]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(91,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(91,11): warning :    sprintf(&humidityOutput, "Humidity = %.2f", humidity);
+main.c(91,11): warning :            ^~~~~~~~~~~~~~~
+  
+sd1306.c(184,39): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(184,39): warning :      oled_buffer[x + (y / 8) * 128] |= (1 << (y & 7));
+sd1306.c(184,39): warning :                                        ^
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[20]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+main.c(92,11): warning : passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+  "no");
+             ^~~~~~~~~~~~
+  
+  \Program Files (x86)\Microsoft Azure Sphere SDK\Sysroots\2/usr/include/stdio.h:99:13: note: expected 'char * restrict' but argument is of type 'char (*)[15]'
+   int sprintf(char *__restrict, const char *__restrict, ...);
+               ^
+sd1306.c(189,39): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(189,39): warning :      oled_buffer[x + (y / 8) * 128] ^= (1 << (y & 7));
+sd1306.c(189,39): warning :                                        ^
+  In function 'sd1306_draw_rect':
+sd1306.c(330,21): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(330,21): warning :    sd1306_draw_pixel(i, y, color);
+sd1306.c(330,21): warning :                      ^
+main.c(96,28): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(96,28): warning :    sd1306_draw_string(0, 0, &tempOutput, 1, 1);
+main.c(96,28): warning :                             ^~~~~~~~~~~
+  
+sd1306.c(332,21): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(332,21): warning :    sd1306_draw_pixel(i, y + height, color);
+sd1306.c(332,21): warning :                      ^
+sd1306.c(337,24): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(337,24): warning :    sd1306_draw_pixel(x, i, color);
+sd1306.c(337,24): warning :                         ^
+sd1306.c(339,32): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(339,32): warning :    sd1306_draw_pixel(x + width, i, color);
+sd1306.c(339,32): warning :                                 ^
+  In function 'sd1306_draw_fill_rect':
+sd1306.c(357,22): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(357,22): warning :     sd1306_draw_pixel(i, j, color);
+sd1306.c(357,22): warning :                       ^
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[20]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+sd1306.c(357,25): warning : conversion to 'int32_t' {aka 'int'} from 'uint32_t' {aka 'unsigned int'} may change the sign of the result [-Wsign-conversion]
+sd1306.c(357,25): warning :     sd1306_draw_pixel(i, j, color);
+sd1306.c(357,25): warning :                          ^
+  In function 'sd1306_draw_round_rect':
+main.c(97,28): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(97,28): warning :    sd1306_draw_string(0, 8, &humidityOutput, 1, 1);
+main.c(97,28): warning :                             ^~~~~~~~~~~~~~~
+  
+sd1306.c(374,21): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(374,21): warning :   sd1306_draw_line(x + radius, y, x + width - radius, y, color);
+sd1306.c(374,21): warning :                    ~~^~~~~~~~
+sd1306.c(374,44): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(374,44): warning :   sd1306_draw_line(x + radius, y, x + width - radius, y, color);
+sd1306.c(374,44): warning :                                   ~~~~~~~~~~^~~~~~~~
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[20]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+sd1306.c(376,21): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(376,21): warning :   sd1306_draw_line(x + radius, y + height - 1, x + width - radius, y + height - 1, color);
+sd1306.c(376,21): warning :                    ~~^~~~~~~~
+main.c(98,29): warning : passing argument 3 of 'sd1306_draw_string' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(98,29): warning :    sd1306_draw_string(0, 16, &flameOutput, 1, 1);
+main.c(98,29): warning :                              ^~~~~~~~~~~~
+  
+sd1306.c(376,42): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(376,42): warning :   sd1306_draw_line(x + radius, y + height - 1, x + width - radius, y + height - 1, color);
+sd1306.c(376,42): warning :                                ~~~~~~~~~~~^~~
+sd1306.h(166,63): message : expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char (*)[15]'
+sd1306.h(166,63): message :  extern void sd1306_draw_string(int32_t x, int32_t y, uint8_t* textptr, int32_t size, uint8_t color);
+sd1306.h(166,63): message :                                                       ~~~~~~~~~^~~~~~~
+main.c(70,18): warning : unused variable 'newButtonState' [-Wunused-variable]
+main.c(70,18): warning :   GPIO_Value_Type newButtonState;
+main.c(70,18): warning :                   ^~~~~~~~~~~~~~
+sd1306.c(376,57): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(376,57): warning :   sd1306_draw_line(x + radius, y + height - 1, x + width - radius, y + height - 1, color);
+sd1306.c(376,57): warning :                                                ~~~~~~~~~~^~~~~~~~
+sd1306.c(376,78): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(376,78): warning :   sd1306_draw_line(x + radius, y + height - 1, x + width - radius, y + height - 1, color);
+sd1306.c(376,78): warning :                                                                    ~~~~~~~~~~~^~~
+sd1306.c(378,24): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(378,24): warning :   sd1306_draw_line(x, y + radius, x, y + height - radius, color);
+sd1306.c(378,24): warning :                       ~~^~~~~~~~
+sd1306.c(378,48): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(378,48): warning :   sd1306_draw_line(x, y + radius, x, y + height - radius, color);
+sd1306.c(378,48): warning :                                      ~~~~~~~~~~~^~~~~~~~
+sd1306.c(380,29): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(380,29): warning :   sd1306_draw_line(x + width - 1, y + radius, x + width - 1, y + height - radius, color);
+sd1306.c(380,29): warning :                    ~~~~~~~~~~^~~
+sd1306.c(380,36): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(380,36): warning :   sd1306_draw_line(x + width - 1, y + radius, x + width - 1, y + height - radius, color);
+sd1306.c(380,36): warning :                                   ~~^~~~~~~~
+sd1306.c(380,56): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(380,56): warning :   sd1306_draw_line(x + width - 1, y + radius, x + width - 1, y + height - radius, color);
+sd1306.c(380,56): warning :                                               ~~~~~~~~~~^~~
+sd1306.c(380,72): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(380,72): warning :   sd1306_draw_line(x + width - 1, y + radius, x + width - 1, y + height - radius, color);
+sd1306.c(380,72): warning :                                                              ~~~~~~~~~~~^~~~~~~~
+sd1306.c(384,30): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(384,30): warning :   sd1306_draw_circle_helper(x + radius, y + radius, radius, 1, color);
+sd1306.c(384,30): warning :                             ~~^~~~~~~~
+sd1306.c(384,42): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(384,42): warning :   sd1306_draw_circle_helper(x + radius, y + radius, radius, 1, color);
+sd1306.c(384,42): warning :                                         ~~^~~~~~~~
+sd1306.c(386,47): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(386,47): warning :   sd1306_draw_circle_helper(x + width - radius - 1, y + radius, radius, 2, color);
+sd1306.c(386,47): warning :                             ~~~~~~~~~~~~~~~~~~~^~~
+sd1306.c(386,54): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(386,54): warning :   sd1306_draw_circle_helper(x + width - radius - 1, y + radius, radius, 2, color);
+sd1306.c(386,54): warning :                                                     ~~^~~~~~~~
+sd1306.c(387,47): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(387,47): warning :   sd1306_draw_circle_helper(x + width - radius - 1, y + height - radius - 1, radius, 4, color);
+sd1306.c(387,47): warning :                             ~~~~~~~~~~~~~~~~~~~^~~
+sd1306.c(387,72): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(387,72): warning :   sd1306_draw_circle_helper(x + width - radius - 1, y + height - radius - 1, radius, 4, color);
+sd1306.c(387,72): warning :                                                     ~~~~~~~~~~~~~~~~~~~~^~~
+sd1306.c(388,30): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(388,30): warning :   sd1306_draw_circle_helper(x + radius, y + height - radius - 1, radius, 8, color);
+sd1306.c(388,30): warning :                             ~~^~~~~~~~
+sd1306.c(388,60): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(388,60): warning :   sd1306_draw_circle_helper(x + radius, y + height - radius - 1, radius, 8, color);
+sd1306.c(388,60): warning :                                         ~~~~~~~~~~~~~~~~~~~~^~~
+  In function 'sd1306_draw_fillround_Rect':
+sd1306.c(403,26): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(403,26): warning :   sd1306_draw_fill_rect(x + radius, y, width - 2 * radius, height, color);
+sd1306.c(403,26): warning :                         ~~^~~~~~~~
+sd1306.c(403,45): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(403,45): warning :   sd1306_draw_fill_rect(x + radius, y, width - 2 * radius, height, color);
+sd1306.c(403,45): warning :                                        ~~~~~~^~~~~~~~~~~~
+sd1306.c(405,51): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(405,51): warning :   sd1306_draw_fillcircle_helper(x + width - radius - 1, y + radius, radius, 1, height - 2 * radius - 2, color);
+sd1306.c(405,51): warning :                                 ~~~~~~~~~~~~~~~~~~~^~~
+sd1306.c(405,58): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(405,58): warning :   sd1306_draw_fillcircle_helper(x + width - radius - 1, y + radius, radius, 1, height - 2 * radius - 2, color);
+sd1306.c(405,58): warning :                                                         ~~^~~~~~~~
+sd1306.c(405,99): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(405,99): warning :   sd1306_draw_fillcircle_helper(x + width - radius - 1, y + radius, radius, 1, height - 2 * radius - 2, color);
+sd1306.c(405,99): warning :                                                                                ~~~~~~~~~~~~~~~~~~~~^~~
+sd1306.c(406,34): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(406,34): warning :   sd1306_draw_fillcircle_helper(x + radius, y + radius, radius, 2, height - 2 * radius - 2, color);
+sd1306.c(406,34): warning :                                 ~~^~~~~~~~
+sd1306.c(406,46): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(406,46): warning :   sd1306_draw_fillcircle_helper(x + radius, y + radius, radius, 2, height - 2 * radius - 2, color);
+sd1306.c(406,46): warning :                                             ~~^~~~~~~~
+sd1306.c(406,87): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(406,87): warning :   sd1306_draw_fillcircle_helper(x + radius, y + radius, radius, 2, height - 2 * radius - 2, color);
+sd1306.c(406,87): warning :                                                                    ~~~~~~~~~~~~~~~~~~~~^~~
+  In function 'sd1306_draw_fill_circle':
+sd1306.c(468,22): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(468,22): warning :    sd1306_draw_line(x - a, y + b, x + a, y + b, color);
+sd1306.c(468,22): warning :                     ~~^~~
+sd1306.c(468,29): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(468,29): warning :    sd1306_draw_line(x - a, y + b, x + a, y + b, color);
+sd1306.c(468,29): warning :                            ~~^~~
+sd1306.c(468,36): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(468,36): warning :    sd1306_draw_line(x - a, y + b, x + a, y + b, color);
+sd1306.c(468,36): warning :                                   ~~^~~
+sd1306.c(468,43): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(468,43): warning :    sd1306_draw_line(x - a, y + b, x + a, y + b, color);
+sd1306.c(468,43): warning :                                          ~~^~~
+sd1306.c(469,22): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(469,22): warning :    sd1306_draw_line(x - a, y - b, x + a, y - b, color);
+sd1306.c(469,22): warning :                     ~~^~~
+sd1306.c(469,29): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(469,29): warning :    sd1306_draw_line(x - a, y - b, x + a, y - b, color);
+sd1306.c(469,29): warning :                            ~~^~~
+sd1306.c(469,36): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(469,36): warning :    sd1306_draw_line(x - a, y - b, x + a, y - b, color);
+sd1306.c(469,36): warning :                                   ~~^~~
+sd1306.c(469,43): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(469,43): warning :    sd1306_draw_line(x - a, y - b, x + a, y - b, color);
+sd1306.c(469,43): warning :                                          ~~^~~
+sd1306.c(470,22): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(470,22): warning :    sd1306_draw_line(x - b, y + a, x + b, y + a, color);
+sd1306.c(470,22): warning :                     ~~^~~
+sd1306.c(470,29): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(470,29): warning :    sd1306_draw_line(x - b, y + a, x + b, y + a, color);
+sd1306.c(470,29): warning :                            ~~^~~
+sd1306.c(470,36): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(470,36): warning :    sd1306_draw_line(x - b, y + a, x + b, y + a, color);
+sd1306.c(470,36): warning :                                   ~~^~~
+sd1306.c(470,43): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(470,43): warning :    sd1306_draw_line(x - b, y + a, x + b, y + a, color);
+sd1306.c(470,43): warning :                                          ~~^~~
+sd1306.c(471,22): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(471,22): warning :    sd1306_draw_line(x - b, y - a, x + b, y - a, color);
+sd1306.c(471,22): warning :                     ~~^~~
+sd1306.c(471,29): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(471,29): warning :    sd1306_draw_line(x - b, y - a, x + b, y - a, color);
+sd1306.c(471,29): warning :                            ~~^~~
+sd1306.c(471,36): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(471,36): warning :    sd1306_draw_line(x - b, y - a, x + b, y - a, color);
+sd1306.c(471,36): warning :                                   ~~^~~
+sd1306.c(471,43): warning : conversion from 'int32_t' {aka 'int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(471,43): warning :    sd1306_draw_line(x - b, y - a, x + b, y - a, color);
+sd1306.c(471,43): warning :                                          ~~^~~
+  In function 'sd1306_draw_fill_triangle':
+sd1306.c(562,26): warning : conversion from 'int16_t' {aka 'short int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(562,26): warning :    sd1306_draw_fast_Hline(a, y0, b - a + 1, color);
+sd1306.c(562,26): warning :                           ^
+sd1306.c(562,39): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(562,39): warning :    sd1306_draw_fast_Hline(a, y0, b - a + 1, color);
+sd1306.c(562,39): warning :                                  ~~~~~~^~~
+sd1306.c(566,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(566,9): warning :   dx01 = x1 - x0;
+sd1306.c(566,9): warning :          ^~
+sd1306.c(567,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(567,9): warning :   dy01 = y1 - y0;
+sd1306.c(567,9): warning :          ^~
+sd1306.c(568,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(568,9): warning :   dx02 = x2 - x0;
+sd1306.c(568,9): warning :          ^~
+sd1306.c(569,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(569,9): warning :   dy02 = y2 - y0;
+sd1306.c(569,9): warning :          ^~
+sd1306.c(570,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(570,9): warning :   dx12 = x2 - x1;
+sd1306.c(570,9): warning :          ^~
+sd1306.c(571,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(571,9): warning :   dy12 = y2 - y1;
+sd1306.c(571,9): warning :          ^~
+sd1306.c(587,10): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(587,10): warning :    last = y1 - 1; // Skip it
+sd1306.c(587,10): warning :           ^~
+sd1306.c(592,7): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(592,7): warning :    a = x0 + sa / dy01;
+sd1306.c(592,7): warning :        ^~
+sd1306.c(593,7): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(593,7): warning :    b = x0 + sb / dy02;
+sd1306.c(593,7): warning :        ^~
+sd1306.c(601,26): warning : conversion from 'int16_t' {aka 'short int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(601,26): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(601,26): warning :                           ^
+sd1306.c(601,29): warning : conversion from 'int16_t' {aka 'short int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(601,29): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(601,29): warning :                              ^
+sd1306.c(601,38): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(601,38): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(601,38): warning :                                 ~~~~~~^~~
+sd1306.c(610,7): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(610,7): warning :    a = x1 + sa / dy12;
+sd1306.c(610,7): warning :        ^~
+sd1306.c(611,7): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(611,7): warning :    b = x0 + sb / dy02;
+sd1306.c(611,7): warning :        ^~
+sd1306.c(619,26): warning : conversion from 'int16_t' {aka 'short int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(619,26): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(619,26): warning :                           ^
+sd1306.c(619,29): warning : conversion from 'int16_t' {aka 'short int'} to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(619,29): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(619,29): warning :                              ^
+sd1306.c(619,38): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(619,38): warning :    sd1306_draw_fast_Hline(a, y, b - a + 1, color);
+sd1306.c(619,38): warning :                                 ~~~~~~^~~
+  In function 'sd1306_draw_circle_helper':
+sd1306.c(633,14): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(633,14): warning :   int16_t f = 1 - radius;
+sd1306.c(633,14): warning :               ^
+sd1306.c(635,18): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(635,18): warning :   int16_t ddF_y = -2 * radius;
+sd1306.c(635,18): warning :                   ^
+sd1306.c(644,13): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(644,13): warning :     ddF_y += 2;
+sd1306.c(644,13): warning :              ^
+sd1306.c(645,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(645,9): warning :     f += ddF_y;
+sd1306.c(645,9): warning :          ^~~~~
+sd1306.c(648,12): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(648,12): warning :    ddF_x += 2;
+sd1306.c(648,12): warning :             ^
+sd1306.c(649,8): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(649,8): warning :    f += ddF_x;
+sd1306.c(649,8): warning :         ^~~~~
+  In function 'sd1306_draw_fillcircle_helper':
+sd1306.c(684,14): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(684,14): warning :   int16_t f = 1 - radius;
+sd1306.c(684,14): warning :               ^
+sd1306.c(686,18): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(686,18): warning :   int16_t ddF_y = -2 * radius;
+sd1306.c(686,18): warning :                   ^
+sd1306.c(695,13): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(695,13): warning :     ddF_y += 2;
+sd1306.c(695,13): warning :              ^
+sd1306.c(696,9): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(696,9): warning :     f += ddF_y;
+sd1306.c(696,9): warning :          ^~~~~
+sd1306.c(699,12): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(699,12): warning :    ddF_x += 2;
+sd1306.c(699,12): warning :             ^
+sd1306.c(700,8): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+sd1306.c(700,8): warning :    f += ddF_x;
+sd1306.c(700,8): warning :         ^~~~~
+sd1306.c(704,24): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(704,24): warning :     sd1306_draw_line(x0 + x, y0 - y, x0 + x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(704,24): warning :                      ~~~^~~
+sd1306.c(704,32): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(704,32): warning :     sd1306_draw_line(x0 + x, y0 - y, x0 + x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(704,32): warning :                              ~~~^~~
+sd1306.c(704,40): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(704,40): warning :     sd1306_draw_line(x0 + x, y0 - y, x0 + x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(704,40): warning :                                      ~~~^~~
+sd1306.c(704,64): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(704,64): warning :     sd1306_draw_line(x0 + x, y0 - y, x0 + x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(704,64): warning :                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~
+sd1306.c(705,24): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(705,24): warning :     sd1306_draw_line(x0 + y, y0 - x, x0 + y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(705,24): warning :                      ~~~^~~
+sd1306.c(705,32): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(705,32): warning :     sd1306_draw_line(x0 + y, y0 - x, x0 + y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(705,32): warning :                              ~~~^~~
+sd1306.c(705,40): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(705,40): warning :     sd1306_draw_line(x0 + y, y0 - x, x0 + y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(705,40): warning :                                      ~~~^~~
+sd1306.c(705,64): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(705,64): warning :     sd1306_draw_line(x0 + y, y0 - x, x0 + y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(705,64): warning :                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~
+sd1306.c(709,24): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(709,24): warning :     sd1306_draw_line(x0 - x, y0 - y, x0 - x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(709,24): warning :                      ~~~^~~
+sd1306.c(709,32): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(709,32): warning :     sd1306_draw_line(x0 - x, y0 - y, x0 - x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(709,32): warning :                              ~~~^~~
+sd1306.c(709,40): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(709,40): warning :     sd1306_draw_line(x0 - x, y0 - y, x0 - x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(709,40): warning :                                      ~~~^~~
+sd1306.c(709,64): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(709,64): warning :     sd1306_draw_line(x0 - x, y0 - y, x0 - x, y0 - y + 2 * y + 1 + delta, color);
+sd1306.c(709,64): warning :                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~
+sd1306.c(710,24): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(710,24): warning :     sd1306_draw_line(x0 - y, y0 - x, x0 - y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(710,24): warning :                      ~~~^~~
+sd1306.c(710,32): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(710,32): warning :     sd1306_draw_line(x0 - y, y0 - x, x0 - y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(710,32): warning :                              ~~~^~~
+sd1306.c(710,40): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(710,40): warning :     sd1306_draw_line(x0 - y, y0 - x, x0 - y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(710,40): warning :                                      ~~~^~~
+sd1306.c(710,64): warning : conversion from 'int' to 'uint8_t' {aka 'unsigned char'} may change value [-Wconversion]
+sd1306.c(710,64): warning :     sd1306_draw_line(x0 - y, y0 - x, x0 - y, y0 - x + 2 * x + 1 + delta, color);
+sd1306.c(710,64): warning :                                              ~~~~~~~~~~~~~~~~~~~^~~~~~~
+  In function 'sd1306_draw_arc':
+sd1306.c(903,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(903,18): warning :    angle = atan2f(b, a)*180.0 / 3.14;
+sd1306.c(903,18): warning :                   ^
+sd1306.c(903,21): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(903,21): warning :    angle = atan2f(b, a)*180.0 / 3.14;
+sd1306.c(903,21): warning :                      ^
+sd1306.c(903,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(903,11): warning :    angle = atan2f(b, a)*180.0 / 3.14;
+sd1306.c(903,11): warning :            ^~~~~~
+sd1306.c(924,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(924,18): warning :    angle = atan2f(a, b)*180.0 / 3.14;
+sd1306.c(924,18): warning :                   ^
+sd1306.c(924,21): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(924,21): warning :    angle = atan2f(a, b)*180.0 / 3.14;
+sd1306.c(924,21): warning :                      ^
+sd1306.c(924,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(924,11): warning :    angle = atan2f(a, b)*180.0 / 3.14;
+sd1306.c(924,11): warning :            ^~~~~~
+sd1306.c(945,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(945,18): warning :    angle = atan2f(b, -a)*180.0 / 3.14;
+sd1306.c(945,18): warning :                   ^
+sd1306.c(945,21): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(945,21): warning :    angle = atan2f(b, -a)*180.0 / 3.14;
+sd1306.c(945,21): warning :                      ^~
+sd1306.c(945,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(945,11): warning :    angle = atan2f(b, -a)*180.0 / 3.14;
+sd1306.c(945,11): warning :            ^~~~~~
+sd1306.c(965,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(965,18): warning :    angle = atan2f(a, -b)*180.0 / 3.14;
+sd1306.c(965,18): warning :                   ^
+sd1306.c(965,21): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(965,21): warning :    angle = atan2f(a, -b)*180.0 / 3.14;
+sd1306.c(965,21): warning :                      ^~
+sd1306.c(965,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(965,11): warning :    angle = atan2f(a, -b)*180.0 / 3.14;
+sd1306.c(965,11): warning :            ^~~~~~
+sd1306.c(985,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(985,18): warning :    angle = atan2f(-a, b)*180.0 / 3.14;
+sd1306.c(985,18): warning :                   ^~
+sd1306.c(985,22): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(985,22): warning :    angle = atan2f(-a, b)*180.0 / 3.14;
+sd1306.c(985,22): warning :                       ^
+sd1306.c(985,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(985,11): warning :    angle = atan2f(-a, b)*180.0 / 3.14;
+sd1306.c(985,11): warning :            ^~~~~~
+sd1306.c(1006,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1006,18): warning :    angle = atan2f(-b, a)*180.0 / 3.14;
+sd1306.c(1006,18): warning :                   ^~
+sd1306.c(1006,22): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1006,22): warning :    angle = atan2f(-b, a)*180.0 / 3.14;
+sd1306.c(1006,22): warning :                       ^
+sd1306.c(1006,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(1006,11): warning :    angle = atan2f(-b, a)*180.0 / 3.14;
+sd1306.c(1006,11): warning :            ^~~~~~
+sd1306.c(1027,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1027,18): warning :    angle = atan2f(-b, -a)*180.0 / 3.14;
+sd1306.c(1027,18): warning :                   ^~
+sd1306.c(1027,22): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1027,22): warning :    angle = atan2f(-b, -a)*180.0 / 3.14;
+sd1306.c(1027,22): warning :                       ^~
+sd1306.c(1027,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(1027,11): warning :    angle = atan2f(-b, -a)*180.0 / 3.14;
+sd1306.c(1027,11): warning :            ^~~~~~
+sd1306.c(1048,18): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1048,18): warning :    angle = atan2f(-a, -b)*180.0 / 3.14;
+sd1306.c(1048,18): warning :                   ^~
+sd1306.c(1048,22): warning : conversion from 'int32_t' {aka 'int'} to 'float' may change value [-Wconversion]
+sd1306.c(1048,22): warning :    angle = atan2f(-a, -b)*180.0 / 3.14;
+sd1306.c(1048,22): warning :                       ^~
+main.c(41,6): warning : unused variable 'fd_btn' [-Wunused-variable]
+main.c(41,6): warning :   int fd_btn = GPIO_OpenAsInput(12);
+main.c(41,6): warning :       ^~~~~~
+  some warnings being treated as errors
+sd1306.c(1048,11): warning : conversion from 'double' to 'int32_t' {aka 'int'} may change value [-Wfloat-conversion]
+sd1306.c(1048,11): warning :    angle = atan2f(-a, -b)*180.0 / 3.14;
+sd1306.c(1048,11): warning :            ^~~~~~
+  some warnings being treated as errors

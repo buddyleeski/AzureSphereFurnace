@@ -1,0 +1,16 @@
+{
+  "SchemaVersion": 1,
+  "Name": "AzureSphereBlink",
+  "ComponentId": "f9adb46e-fbbe-4a1b-90c6-8f46f198f862",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": [],
+  "Capabilities": {
+    "AllowedConnections": ["sphere-data-service.azurewebsites.net"],
+    "Gpio": [ 0, 1, 2, 9, 12, 16, 17,31, 32, 33, 34, 42, 43 ],
+    "Uart": [],
+    "I2cMaster": [ "ISU2" ],
+    "WifiConfig": false
+  },
+  "ApplicationType": "Default"
+
+}
